@@ -1,0 +1,41 @@
+/*
+    . -> classe;
+    # -> id;
+    sem nada -> tag html;
+*/
+
+.cabecalho__container { /* tem que ser o elemento pai */
+    display: flex; /* coloca os elementos um do lado do outro; */
+    justify-content: space-between; /* coloca um espaço entre os elementos */
+    align-items: center; /* centraliza os elementos na vertical da div */
+    position: fixed; /* fixa a posição da div */
+    top: 0; /* fixa (position + top) a div no topo */
+}
+
+.cabecalho__pesquisar__item {
+    display: none; /* não exibe o elemento por padrão */
+}
+
+.superior__secao__container {
+    display: flex; /* elementos ficam um ao lado do outro */
+    align-items: center; /* centraliza os elementos na vertical da div */
+    white-space: nowrap; /* os elementos com mais de uma palavra não vão quebrar */
+    overflow: scroll; /* adiciona uma barra de rolagem */
+    gap: 15px; /* adiciona um gap entre os elementos, e não aplica nas extremidades */
+}
+
+.rodape__container {
+    display: flex; /* os elementos ficam em linha */
+    /* flex-direction: column; /* os elementos ficam em coluna, na vertical */
+    /* flex-wrap: wrap; /* os elementos ficam quebrados, não fica só uma coluna inteira */
+    flex-flow: column wrap; /* as duas propriedades acima em uma propriedade só */
+}
+
+@media (min-width: 834px) { /* quando a tela for maior que esse tamanho */
+    .cabecalho__pesquisar__item {
+        display: block; /* aí sim exibe o elemento */
+    }
+    .rodape__container {
+        justify-content: space-between; /* adiciona um espaço entre os elementos */
+    }
+}
