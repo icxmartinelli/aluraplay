@@ -16,6 +16,28 @@
     display: none; /* não exibe o elemento por padrão */
 }
 
+.menu__container {
+    position: fixed; /* fixa o elemento */
+    bottom: 0%; /* fixa ele na parte inferior */
+    height: 74px;
+    width: 100%; /* vai ocupar a largura total do elemento pai */
+}
+
+.menu__lista {
+    display: flex; /* coloca os elementos um do lado do outro; */
+    justify-content: space-around; /* ítens distribuídos igualmente com o mesmo espaçamento entre cada linha */
+}
+
+.menu__lista li { /* propriedades para elementos-filho */
+    align-items: center; /* alinhar central verticalmente, no elemento em si */
+}
+
+.menu__lista:nth-child(2),
+.menu__lista:nth-child(3),
+.menu__lista:nth-child(4) {
+    display: none; /* some com os blocos de lista selecionados */
+}
+
 .superior__secao__container {
     display: flex; /* elementos ficam um ao lado do outro */
     align-items: center; /* centraliza os elementos na vertical da div */
