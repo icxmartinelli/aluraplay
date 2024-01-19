@@ -32,6 +32,12 @@
     align-items: center; /* alinhar central verticalmente, no elemento em si */
 }
 
+.menu__itens {
+    display: flex;
+    flex-direction: column; /* deixa o ícone e o texto desse elemento um em cima do outro, igual o mobile deve ser */
+    gap: 5px; /* adicionou um espaçamento entre o ícone e o texto */
+}
+
 .menu__lista:nth-child(2),
 .menu__lista:nth-child(3),
 .menu__lista:nth-child(4) {
@@ -59,5 +65,55 @@
     }
     .rodape__container {
         justify-content: space-between; /* adiciona um espaço entre os elementos */
+    }
+    /* DESAFIO */
+    .menu__container {
+        left: 0%; /* fixa ele no lado esquerdo */
+        top: 80px;
+        width: 74px;
+        height: auto;
+    }
+    .menu__lista {
+        flex-direction: column;
+        gap: 33px;
+        justify-content: flex-start; /* ítens distribuídos igualmente com o mesmo espaçamento entre cada linha */
+        padding-top: 15px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .menu__container {
+        width: 239px; /* aumentando a largura */
+        overflow: scroll; /* adiciona uma barrinha de rolagem */
+    }
+    .menu__lista:nth-child(2),
+    .menu__lista:nth-child(3),
+    .menu__lista:nth-child(4) {
+        display: flex; /* tirando o 'none' que sumia com esses menus nas telas menores */
+    }
+    .menu__lista {
+        height: auto; /* todos os elementos dessa classe estavam com altura de 100%, o que impedia ver o restante do menu, de inscrição etc */
+        padding: 20px 17px 20px 17px; /* para que o efeito do hover não vá de extremidade a extremidade */
+        gap: 15px; /* cada <li> ainda está muito distante uma da outra, por isso ajuste */
+    }
+    .menu__itens {
+        flex-direction: row; /* mudando porque antes ficava o ícone em cima do texto, agora ele fica do lado */
+        gap: 15px; /* adicionando um espaço entre os elementos*/
+        align-items: center; /* centralizar horizontalmente ícone com texto */
+    }
+    .menu__lista:nth-child(3) {
+        flex-direction: column-reverse; /* inverte os itens da lista do terceiro bloco */
+    }
+    .jogos {
+        order: 3;
+    }
+    .filmes {
+        order: 2;
+    }
+    .premium {
+        order: 1;
+    }
+    .maispagina {
+        order: 4;
     }
 }
